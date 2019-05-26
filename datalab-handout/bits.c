@@ -178,7 +178,7 @@ int isTmax(int x) {
   int xPlusOne = x+1;
   int min = x + xPlusOne;
   int zero = ~min;
-  isMax = (!zero ^ isMinusOne);
+  int isMax = (!zero ^ isMinusOne);
   return isMax;
 }
 /* 
