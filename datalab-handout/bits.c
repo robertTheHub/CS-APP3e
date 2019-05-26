@@ -160,8 +160,9 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmin(void) {
-
-  return 2;
+  int notOne = ~0;
+  int minimum = notOne << 31;
+  return minimum;
 
 }
 //2
@@ -173,7 +174,10 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
-  return 2;
+  int xPlusOne = x+1;
+  int min = x + xPlusOne;
+  int zero = !min;
+  return !zero;
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
