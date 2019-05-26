@@ -174,10 +174,12 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
+  int isMinusOne = !(~x);
   int xPlusOne = x+1;
   int min = x + xPlusOne;
   int zero = ~min;
-  return !zero;
+  isMax = (!zero ^ isMinusOne);
+  return isMax;
 }
 /* 
  * allOddBits - return 1 if all odd-numbered bits in word set to 1
