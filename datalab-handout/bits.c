@@ -176,7 +176,7 @@ int tmin(void) {
 int isTmax(int x) {
   int xPlusOne = x+1;
   int min = x + xPlusOne;
-  int zero = !min;
+  int zero = ~min;
   return !zero;
 }
 /* 
