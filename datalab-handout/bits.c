@@ -160,8 +160,7 @@ int bitXor(int x, int y) {
  *   Rating: 1
  */
 int tmin(void) {
-  int notOne = ~0;
-  int minimum = notOne << 31;
+  int minimum = 1 << 31;
   return minimum;
 
 }
@@ -174,9 +173,11 @@ int tmin(void) {
  *   Rating: 1
  */
 int isTmax(int x) {
-  int isMinusOne = !(~x);
-  int xPlusOne = x+1;
-  int min = x + xPlusOne;
+  int notX = ~x;
+  int negX = notX + 1;
+  int isMinusOne = !(~(negX));
+  int xPlusOne = negX+1;
+  int min = negX + xPlusOne;
   int zero = ~min;
   int isMax = (!zero ^ isMinusOne);
   return isMax;
@@ -190,7 +191,11 @@ int isTmax(int x) {
  *   Rating: 2
  */
 int allOddBits(int x) {
-  return 2;
+  int leftShift = x << 1;
+  int xorTwo = x ^ leftShift;
+  int result = xorTwo + 1;
+  int zero = ~result;
+  return !(zero);
 }
 /* 
  * negate - return -x 
@@ -200,7 +205,8 @@ int allOddBits(int x) {
  *   Rating: 2
  */
 int negate(int x) {
-  return 2;
+  int notX = ~x;
+  return notX + 1;
 }
 //3
 /* 
